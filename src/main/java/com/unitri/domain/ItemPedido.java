@@ -54,8 +54,4 @@ public class ItemPedido {
 	public void setQuantidade(Long quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	/////ghjhjghjgjkhjgkjgkgkjghjk
-	
-	/////fdsfs
 }
