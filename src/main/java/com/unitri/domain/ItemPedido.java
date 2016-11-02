@@ -1,12 +1,12 @@
 package com.unitri.domain;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +16,8 @@ public class ItemPedido {
 	private Integer idItemPedido;
 	private Pedido pedido;
 	private Produto produto;
-	private BigDecimal valor;
+	private Long quantidade;
+
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -24,27 +25,34 @@ public class ItemPedido {
 	public Integer getIdItemPedido() {
 		return idItemPedido;
 	}
-	
 	public void setIdItemPedido(Integer idItemPedido) {
 		this.idItemPedido = idItemPedido;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="id_pedido")
 	public Pedido getPedido() {
 		return pedido;
 	}
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
+	
+	@ManyToOne
+	@JoinColumn(name="id_produto")
 	public Produto getProduto() {
 		return produto;
 	}
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	public BigDecimal getValor() {
-		return valor;
+	
+	@Column(name="quantidade")
+	public Long getQuantidade() {
+		return quantidade;
 	}
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
+	public void setQuantidade(Long quantidade) {
+		this.quantidade = quantidade;
 	}
 	
 

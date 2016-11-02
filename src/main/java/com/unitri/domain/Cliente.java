@@ -48,7 +48,7 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	@Column(name="CPF")
+	@Column(name="cpf")
 	public String getCPF() {
 		return CPF;
 	}

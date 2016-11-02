@@ -2,6 +2,7 @@ package com.unitri.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +22,9 @@ public class Pedido {
 	private Date dataPedido;
 	private String status;
 	private Cliente cliente;
+	private List<ItemPedido> itensPedido;
 	private BigDecimal valorTotal;
+	
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -55,6 +59,15 @@ public class Pedido {
 	}
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	@OneToMany
+	@JoinColumn(name="itens_pedido")
+	public List<ItemPedido> getItensPedido() {
+		return itensPedido;
+	}
+	public void setItensPedido(List<ItemPedido> itensPedido) {
+		this.itensPedido = itensPedido;
 	}
 	
 	@Column(name="valor_total")
