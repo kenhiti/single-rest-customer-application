@@ -1,7 +1,8 @@
-*
-/target
-*/bin
-.mvn
-.settings
-.git
-
+bin/*
+target/*
+mvnw.cmd
+mvnw
+.classpath
+.mvn/*
+.project
+.settings/*
