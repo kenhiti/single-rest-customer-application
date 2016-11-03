@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="cliente")
 public class Cliente {
 	
-	private Integer idCliente;
+	private Long idCliente;
 	private String nome;
 	private Date dataNascimento;
 	private String CPF;
@@ -25,10 +25,10 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_cliente")
-	public Integer getIdCliente() {
+	public Long getIdCliente() {
 		return idCliente;
 	}
-	public void setIdCliente(Integer idCliente) {
+	public void setIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
 	}
 	
