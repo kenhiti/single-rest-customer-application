@@ -22,8 +22,8 @@ public class ProdutoService {
 		return repository.save(produto);
 	}
 	
-	public void delete(Produto produto){
-		repository.delete(produto);
+	public void delete(Long id){
+		repository.delete(id);
 	}
 	
 	public List<Produto> findAll(){
