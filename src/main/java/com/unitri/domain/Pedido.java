@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Table(name="pedido")
 public class Pedido {
 	
-	private Integer idPedido;
+	private Long idPedido;
 	private Date dataPedido;
 	private String status;
 	private Cliente cliente;
@@ -29,10 +29,10 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_pedido")
-	public Integer getIdPedido() {
+	public Long getIdPedido() {
 		return idPedido;
 	}
-	public void setIdPedido(Integer idPedido) {
+	public void setIdPedido(Long idPedido) {
 		this.idPedido = idPedido;
 	}
 	
