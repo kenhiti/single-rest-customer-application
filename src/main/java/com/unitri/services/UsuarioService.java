@@ -22,8 +22,8 @@ public class UsuarioService {
 		return repository.save(usuario);
 	}
 	
-	public void delete(Usuario usuario){
-		repository.delete(usuario);
+	public void delete(Long id){
+		repository.delete(id);
 	}
 	
 	public List<Usuario> findAll(){
