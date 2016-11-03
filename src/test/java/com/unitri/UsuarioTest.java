@@ -18,7 +18,7 @@ import com.unitri.services.UsuarioService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PersistenceTest {
+public class UsuarioTest {
 
 	@Autowired
 	private UsuarioService service;
