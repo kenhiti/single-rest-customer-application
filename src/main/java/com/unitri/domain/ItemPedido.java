@@ -13,8 +13,7 @@ import javax.persistence.Table;
 @Table(name="item_pedido")
 public class ItemPedido {
 	
-	private Integer idItemPedido;
-	private Pedido pedido;
+	private Long idItemPedido;
 	private Produto produto;
 	private Long quantidade;
 
@@ -22,20 +21,11 @@ public class ItemPedido {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_item_pedido")
-	public Integer getIdItemPedido() {
+	public Long getIdItemPedido() {
 		return idItemPedido;
 	}
-	public void setIdItemPedido(Integer idItemPedido) {
+	public void setIdItemPedido(Long idItemPedido) {
 		this.idItemPedido = idItemPedido;
-	}
-	
-	@ManyToOne
-	@JoinColumn(name="id_pedido")
-	public Pedido getPedido() {
-		return pedido;
-	}
-	public void setPedido(Pedido pedido) {
-		this.pedido = pedido;
 	}
 	
 	@ManyToOne
